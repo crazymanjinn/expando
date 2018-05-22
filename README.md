@@ -1,0 +1,2 @@
+# expando
+make text ｅｘｐａｎｄ
