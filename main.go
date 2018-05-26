@@ -15,8 +15,13 @@ func convert(r io.Reader, w io.Writer) error {
 	for scanner.Scan() {
 		r, size := utf8.DecodeRune(scanner.Bytes())
 
-		if size != 0 && r != utf8.RuneError && !(r < 0x0021 || r > 0x007e) {
-			r += 0xfee0
+		if size != 0 && r != utf8.RuneError && !(r < 0x0020 || r > 0x007e) {
+			switch r {
+			case 0x0020:
+				r = 0x3000
+			default:
+				r += 0xfee0
+			}
 		}
 
 		fmt.Fprint(w, string(r))

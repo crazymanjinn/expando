@@ -39,8 +39,8 @@ func TestMain(t *testing.T) {
 		in       string
 		expected string
 	}{
-		{"ascii", "hello world", "ｈｅｌｌｏ ｗｏｒｌｄ"},
-		{"full-width", "ｈｅｌｌｏ ｗｏｒｌｄ", "ｈｅｌｌｏ ｗｏｒｌｄ"},
+		{"ascii", "hello world", "ｈｅｌｌｏ　ｗｏｒｌｄ"},
+		{"full-width", "ｈｅｌｌｏ ｗｏｒｌｄ", "ｈｅｌｌｏ　ｗｏｒｌｄ"},
 		{"japanese", "日本語", "日本語"},
 	}
 	for _, tc := range testCases {
